@@ -4,3 +4,5 @@ __pycache__/
 node_modules/
 *.log
 .DS_Store
+progress/progress.tex
+progress/minutes_of_meeting.tex
