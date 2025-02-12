@@ -1,0 +1,6 @@
+README.md
+setup.py
+curanet.egg-info/PKG-INFO
+curanet.egg-info/SOURCES.txt
+curanet.egg-info/dependency_links.txt
+curanet.egg-info/top_level.txt
