@@ -1,0 +1,2 @@
+[console_scripts]
+curanet = backend.app:main

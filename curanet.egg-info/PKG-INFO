@@ -1,7 +1,7 @@
 Metadata-Version: 2.2
 Name: curanet
 Version: 0.1.0
-Summary: A healthcare management system for centralized patient records and hospital dashboards.
+Summary: A healthcare management system for centralized patient records.
 Home-page: https://github.com/yourusername/curanet
 Author: Adarsh Priydarshi
 Author-email: your_email@example.com
@@ -10,12 +10,19 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+Requires-Dist: flask
+Requires-Dist: sqlalchemy
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: scikit-learn
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
