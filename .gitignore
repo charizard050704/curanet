@@ -6,3 +6,4 @@ node_modules/
 .DS_Store
 progress/progress.tex
 progress/minutes_of_meeting.tex
+.env
