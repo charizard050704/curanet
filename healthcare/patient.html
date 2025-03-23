@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard patient-dash">
+    <aside class="sidebar">
+      <ul>
+        <li onclick="showSection('booking')">Book Visit</li>
+        <li onclick="showSection('reports')">My Reports</li>
+        <li onclick="showSection('vitals')">Vitals History</li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </aside>
+    <main>
+      <h2 id="patient-name">Welcome, Patient</h2>
+      <section id="booking" class="dash-section">
+        <h3>Book a Visit</h3>
+        <input type="date" id="visit-date">
+        <select id="doctor-select">
+          <option value="doc1">Dr. Smith</option>
+          <option value="doc2">Dr. Jones</option>
+        </select>
+        <button onclick="bookVisit()">Book Now</button>
+      </section>
+      <section id="reports" class="dash-section" style="display: none;">
+        <h3>My Reports</h3>
+        <div id="report-list"></div>
+      </section>
+      <section id="vitals" class="dash-section" style="display: none;">
+        <h3>Vitals History</h3>
+        <canvas id="vitals-chart"></canvas>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
