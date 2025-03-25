@@ -11,7 +11,7 @@ const AppointmentsNew = () => {
   const [loadingPatients, setLoadingPatients] = useState(true);
   const [loadingDoctors, setLoadingDoctors] = useState(false);
   const [patients, setPatients] = useState([]);
-  const [departments, setDepartments] = useState([
+  const [departments] = useState([
     { id: 1, name: 'Cardiology' },
     { id: 2, name: 'Neurology' },
     { id: 3, name: 'Orthopedics' },
@@ -137,12 +137,12 @@ const AppointmentsNew = () => {
         
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Patient *</label>
+            <label className="form-label">Patient *</label>
             <select
               name="patient"
               value={formData.patient}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              className="form-input"
               required
               disabled={loadingPatients}
             >
@@ -159,12 +159,12 @@ const AppointmentsNew = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700">Department *</label>
+            <label className="form-label">Department *</label>
             <select
               name="department"
               value={formData.department}
               onChange={handleDepartmentChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              className="form-input"
               required
             >
               <option value="">Select department</option>
@@ -177,12 +177,12 @@ const AppointmentsNew = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700">Doctor *</label>
+            <label className="form-label">Doctor *</label>
             <select
               name="doctor"
               value={formData.doctor}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              className="form-input"
               required
               disabled={!formData.department || loadingDoctors}
             >
@@ -200,11 +200,11 @@ const AppointmentsNew = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Date *</label>
+              <label className="form-label">Date *</label>
               <DatePicker
                 selected={formData.date}
                 onChange={handleDateChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                className="form-input"
                 minDate={new Date()}
                 dateFormat="MMMM d, yyyy"
                 placeholderText="Select date"
@@ -213,12 +213,12 @@ const AppointmentsNew = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Time *</label>
+              <label className="form-label">Time *</label>
               <select
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                className="form-input"
                 required
               >
                 <option value="">Select time</option>
@@ -239,12 +239,12 @@ const AppointmentsNew = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700">Priority</label>
+            <label className="form-label">Priority</label>
             <select
               name="priority"
               value={formData.priority}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              className="form-input"
             >
               <option value="normal">Normal</option>
               <option value="urgent">Urgent</option>
@@ -253,13 +253,13 @@ const AppointmentsNew = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700">Notes</label>
+            <label className="form-label">Notes</label>
             <textarea
               name="notes"
               value={formData.notes}
               onChange={handleChange}
               rows="3"
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              className="form-input"
               placeholder="Additional notes or special instructions..."
             />
           </div>
@@ -268,14 +268,14 @@ const AppointmentsNew = () => {
             <button
               type="button"
               onClick={() => navigate('/hospital')}
-              className="px-4 py-2 border rounded text-gray-700 hover:bg-gray-50"
+              className="btn btn-secondary"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+              className="btn btn-success"
             >
               {loading ? 'Scheduling...' : 'Schedule Appointment'}
             </button>

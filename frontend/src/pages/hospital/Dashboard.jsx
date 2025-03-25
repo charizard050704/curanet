@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaUsers, FaCalendarAlt, FaFileMedical, FaChartLine, FaUserMd, FaAmbulance } from 'react-icons/fa';
 import AuthContext from '../../context/AuthContext.jsx';
@@ -16,6 +17,19 @@ const HospitalDashboard = () => {
   
   const [appointments, setAppointments] = useState([]);
   const [emergencyRequests, setEmergencyRequests] = useState([]);
+
+  // Define animation variants to make it clear motion is used
+  const fadeIn = {
+    initial: { opacity: 0, y: -20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
+  
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay }
+  });
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -146,9 +160,10 @@ const HospitalDashboard = () => {
     <div className="container mx-auto px-4 py-8">
       <motion.div 
         className="mb-8"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={fadeIn.initial}
+        animate={fadeIn.animate}
+        transition={fadeIn.transition}
+        layout
       >
         <h1 className="text-2xl font-bold text-gray-800">Hospital Dashboard</h1>
         <p className="text-gray-600">Welcome, {user?.name || 'Hospital Staff'}</p>
@@ -158,9 +173,9 @@ const HospitalDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <motion.div 
           className="card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={fadeUp(0.1)}
+          animate={fadeUp(0.1)}
+          layout
         >
           <div className="card-body flex items-center">
             <div className="rounded-full bg-blue-100 p-3 mr-4">
@@ -175,9 +190,9 @@ const HospitalDashboard = () => {
         
         <motion.div 
           className="card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={fadeUp(0.2)}
+          animate={fadeUp(0.2)}
+          layout
         >
           <div className="card-body flex items-center">
             <div className="rounded-full bg-green-100 p-3 mr-4">
@@ -192,9 +207,9 @@ const HospitalDashboard = () => {
         
         <motion.div 
           className="card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          initial={fadeUp(0.3)}
+          animate={fadeUp(0.3)}
+          layout
         >
           <div className="card-body flex items-center">
             <div className="rounded-full bg-purple-100 p-3 mr-4">
@@ -209,9 +224,9 @@ const HospitalDashboard = () => {
         
         <motion.div 
           className="card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          initial={fadeUp(0.4)}
+          animate={fadeUp(0.4)}
+          layout
         >
           <div className="card-body flex items-center">
             <div className="rounded-full bg-red-100 p-3 mr-4">
@@ -229,9 +244,9 @@ const HospitalDashboard = () => {
       {emergencyRequests.length > 0 && (
         <motion.div
           className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          initial={fadeUp(0.5)}
+          animate={fadeUp(0.5)}
+          layout
         >
           <h2 className="text-xl font-semibold mb-4 flex items-center">
             <FaAmbulance className="mr-2 text-red-500" />
@@ -316,9 +331,9 @@ const HospitalDashboard = () => {
       {/* Today's Appointments */}
       <motion.div
         className="mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        initial={fadeUp(0.6)}
+        animate={fadeUp(0.6)}
+        layout
       >
         <h2 className="text-xl font-semibold mb-4 flex items-center">
           <FaCalendarAlt className="mr-2 text-blue-500" />
@@ -396,9 +411,9 @@ const HospitalDashboard = () => {
       
       {/* Quick Actions */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
+        initial={fadeUp(0.7)}
+        animate={fadeUp(0.7)}
+        layout
       >
         <h2 className="text-xl font-semibold mb-4 flex items-center">
           <FaChartLine className="mr-2 text-blue-500" />

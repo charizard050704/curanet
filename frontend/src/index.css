@@ -55,6 +55,10 @@ body {
     @apply bg-green-600 hover:bg-green-700 text-white focus:ring-green-500;
   }
   
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-blue-500;
+  }
+  
   .btn-sm {
     @apply py-1 px-3 text-xs;
   }
@@ -93,6 +97,10 @@ body {
   
   .badge-gray {
     @apply bg-gray-100 text-gray-800;
+  }
+  
+  .badge-orange {
+    @apply bg-orange-100 text-orange-800 px-2 py-0.5 rounded text-xs font-medium;
   }
   
   .sidebar-link {

@@ -3,6 +3,7 @@ const { Pool } = require('pg');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const app = express();
 
 // Middleware
@@ -11,15 +12,15 @@ app.use(express.json());
 
 // Configure PostgreSQL connection
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'curanet',
-  password: 'Adarsh',
-  port: 5432,
+  user: process.env.DB_USER || 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'curanet',
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT || 5432,
 });
 
 // JWT Secret
-const JWT_SECRET = 'curanet-secret-key'; // In production, use environment variable
+const JWT_SECRET = process.env.JWT_SECRET || 'curanet-secret-key'; // Fallback for development only
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
