@@ -40,84 +40,18 @@ const HospitalDashboard = () => {
         // Simulate API call delay
         setTimeout(() => {
           setStats({
-            totalPatients: 276,
-            activeAppointments: 18,
-            pendingRecords: 7,
-            emergencyRequests: 2
+            totalPatients: ,
+            activeAppointments: ,
+            pendingRecords: ,
+            emergencyRequests: 
           });
           
           setAppointments([
-            {
-              id: 1,
-              patient: 'John Smith',
-              patientId: 'P1001',
-              doctor: 'Dr. Sarah Johnson',
-              department: 'Cardiology',
-              date: '2023-08-15',
-              time: '10:30 AM',
-              status: 'confirmed'
-            },
-            {
-              id: 2,
-              patient: 'Emma Wilson',
-              patientId: 'P1042',
-              doctor: 'Dr. Michael Chen',
-              department: 'Neurology',
-              date: '2023-08-15',
-              time: '2:15 PM',
-              status: 'in-progress'
-            },
-            {
-              id: 3,
-              patient: 'Robert Johnson',
-              patientId: 'P1055',
-              doctor: 'Dr. Jessica Martinez',
-              department: 'Orthopedics',
-              date: '2023-08-15',
-              time: '3:00 PM',
-              status: 'confirmed'
-            },
-            {
-              id: 4,
-              patient: 'Sarah Thompson',
-              patientId: 'P1065',
-              doctor: 'Dr. James Wilson',
-              department: 'Dermatology',
-              date: '2023-08-15',
-              time: '4:30 PM',
-              status: 'confirmed'
-            },
-            {
-              id: 5,
-              patient: 'David Brown',
-              patientId: 'P1078',
-              doctor: 'Dr. Elizabeth Lee',
-              department: 'Ophthalmology',
-              date: '2023-08-15',
-              time: '5:15 PM',
-              status: 'pending'
-            }
+            
           ]);
           
           setEmergencyRequests([
-            {
-              id: 1,
-              patient: 'Michael Clark',
-              patientId: 'P1023',
-              symptoms: 'Severe chest pain, difficulty breathing',
-              location: '123 Main St, Apt 4B, New York',
-              requestTime: '2023-08-15 08:45 AM',
-              status: 'pending'
-            },
-            {
-              id: 2,
-              patient: 'Lisa Rodriguez',
-              patientId: 'P1089',
-              symptoms: 'High fever, severe headache, disorientation',
-              location: '456 Park Ave, New York',
-              requestTime: '2023-08-15 07:30 AM',
-              status: 'dispatched'
-            }
+            
           ]);
           
           setLoading(false);
