@@ -99,43 +99,6 @@ const DoctorDashboard = () => {
 
   const fetchDoctorData = async () => {
     try {
-      // This would be an API call in production
-      const mockDoctor = {
-        id: user?.id || '123',
-        name: user?.name || 'Dr. Sarah Johnson',
-        photo: user?.photo || 'https://ik.imagekit.io/curanet/doctor1.jpg?updatedAt=1680567412863',
-        specialization: 'Cardiology',
-        qualifications: ['MBBS', 'MD - Cardiology', 'Fellowship in Interventional Cardiology'],
-        experience: 12,
-        languages: ['English', 'Spanish', 'French'],
-        expertise: ['Cardiac Catheterization', 'Echocardiography', 'Heart Failure Management', 'Preventive Cardiology'],
-        certifications: ['Board Certified in Cardiology', 'Advanced Cardiac Life Support Instructor'],
-        patientLimit: 12,
-        currentPatients: 8,
-        rating: 4.9,
-        reviewCount: 156,
-        availability: {
-          monday: { morning: true, afternoon: true, evening: false },
-          tuesday: { morning: true, afternoon: true, evening: false },
-          wednesday: { morning: false, afternoon: true, evening: true },
-          thursday: { morning: true, afternoon: true, evening: false },
-          friday: { morning: true, afternoon: false, evening: false },
-          saturday: { morning: false, afternoon: false, evening: false },
-          sunday: { morning: false, afternoon: false, evening: false },
-        },
-      };
-      
-      setDoctor(mockDoctor);
-      
-      // Calculate dashboard stats
-      const mockStats = {
-        totalPatients: 124,
-        appointmentsToday: 8,
-        appointmentsThisWeek: 32,
-        prescriptionsThisMonth: 87
-      };
-      
-      setDashboardStats(mockStats);
     } catch (error) {
       console.error('Error fetching doctor data:', error);
       toast.error('Failed to load doctor profile');
@@ -143,61 +106,7 @@ const DoctorDashboard = () => {
   };
 
   const fetchAppointments = async () => {
-    try {
-      // This would be an API call in production
-      const mockAppointments = [
-        {
-          id: 1,
-          patientName: 'John Smith',
-          patientId: 'P1001',
-          time: '10:00 AM',
-          status: 'waiting',
-          symptoms: 'Fever and headache',
-          age: 45,
-          gender: 'Male',
-          allergies: 'Penicillin',
-          vitalSigns: {
-            temperature: '38.2°C',
-            bloodPressure: '130/85',
-            heartRate: '88 bpm'
-          }
-        },
-        {
-          id: 2,
-          patientName: 'Sarah Johnson',
-          patientId: 'P1002',
-          time: '11:00 AM',
-          status: 'in-progress',
-          symptoms: 'Back pain',
-          age: 35,
-          gender: 'Female',
-          allergies: 'None',
-          vitalSigns: {
-            temperature: '36.8°C',
-            bloodPressure: '120/80',
-            heartRate: '72 bpm'
-          }
-        },
-        {
-          id: 3,
-          patientName: 'Robert Davis',
-          patientId: 'P1003',
-          time: '1:30 PM',
-          status: 'waiting',
-          symptoms: 'Cough and congestion',
-          age: 60,
-          gender: 'Male',
-          allergies: 'Sulfa drugs',
-          vitalSigns: {
-            temperature: '37.4°C',
-            bloodPressure: '145/90',
-            heartRate: '80 bpm'
-          }
-        }
-      ];
-      
-      setAppointments(mockAppointments);
-      setLoading(false);
+    try {  
     } catch (error) {
       console.error('Error fetching appointments:', error);
       toast.error('Failed to load appointments');
