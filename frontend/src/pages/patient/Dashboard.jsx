@@ -29,48 +29,17 @@ const PatientDashboard = () => {
         // Simulate API call delay
         setTimeout(() => {
           setStats({
-            upcomingAppointments: 3,
-            medicalRecords: 8,
-            prescriptions: 5,
-            hospitals: 2
+            upcomingAppointments: ,
+            medicalRecords: ,
+            prescriptions: ,
+            hospitals: 
           });
           
           setAppointments([
-            {
-              id: 1,
-              doctor: 'Dr. Sarah Johnson',
-              hospital: 'City General Hospital',
-              department: 'Cardiology',
-              date: '2023-08-15',
-              time: '10:30 AM',
-              status: 'confirmed'
-            },
-            {
-              id: 2,
-              doctor: 'Dr. Michael Chen',
-              hospital: 'Metro Medical Center',
-              department: 'Neurology',
-              date: '2023-08-20',
-              time: '2:15 PM',
-              status: 'pending'
-            },
-            {
-              id: 3,
-              doctor: 'Dr. Jessica Martinez',
-              hospital: 'City General Hospital',
-              department: 'Orthopedics',
-              date: '2023-08-27',
-              time: '9:00 AM',
-              status: 'confirmed'
-            }
+            
           ]);
           
-          setHealthMetrics({
-            heartRate: { value: 78, status: 'normal' },
-            bloodPressure: { value: '120/80', status: 'normal' },
-            bloodSugar: { value: 110, status: 'warning' },
-            temperature: { value: 37.2, status: 'normal' }
-          });
+          setHealthMetrics();
           
           setLoading(false);
         }, 1000);
